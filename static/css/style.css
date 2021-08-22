@@ -1,0 +1,653 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", sans-serif;
+}
+.wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+nav {
+  display: flex;
+  height: 65px;
+  align-items: center;
+  background-color: black;
+  border-bottom: 2px solid #9f1515;
+  transition: 0.5s all;
+}
+
+.logo {
+  width: 12%;
+  margin: 6px 0px;
+  margin-left: 38px;
+}
+
+.logo img {
+  width: 42px;
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+nav a.active,
+nav a:hover {
+  background-color: #9f1515;
+}
+
+#intro {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+#intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("static/img/baloon.jpg") center center no-repeat;
+  background-size: cover;
+  z-index: -1;
+  border: 2px solid black;
+  opacity: 0.4;
+}
+
+.main-text {
+  color: #a01516;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #a01516;
+}
+
+.btn {
+  color: white;
+  cursor: pointer;
+  background-color: #a01516;
+  padding: 14px;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 11px;
+  outline: none;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 50px auto;
+}
+
+#details .item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reverse-flex {
+  flex-direction: row-reverse;
+}
+
+.img-container {
+  width: 160px;
+  height: 160px;
+  border: 2px solid #a01516;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+#santa-img {
+  background: url("static/img/santa.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+#santa-kid {
+  background: url("static/img/santaWithKid.jpeg") center center no-repeat;
+  background-size: cover;
+}
+
+#camera {
+  background: url("static/img/childWithCamera.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+#details .img-desc {
+  width: 70%;
+}
+
+.divider {
+  border: 1px solid #a01516;
+  width: 100vw;
+  margin: 20px 0px;
+}
+
+p {
+  margin: 10px 0px;
+}
+
+#testimonials {
+  margin: 20px 0px;
+  padding: 30px 0px;
+  background-color: #eda1a1;
+}
+
+#slide1:checked ~ .slider {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .slider {
+  margin-left: -100%;
+}
+
+#slide3:checked ~ .slider {
+  margin-left: -200%;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300%;
+  overflow: hidden;
+  transition: margin-left 800ms;
+}
+
+.slide {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.img-slide {
+  width: 20%;
+  text-align: right;
+}
+
+.content-slide {
+  width: 73%;
+}
+
+.content-slide-symbol {
+  font-size: 4.2rem;
+  font-weight: bold;
+  color: gray;
+  font-family: Helvetica, sans-serif;
+}
+
+.content-slide hr {
+  width: 20%;
+  margin: 20px 0px;
+  border: 2px solid #a01516;
+}
+
+.img-slide img {
+  width: 50%;
+  border: 2px solid #ff96ad;
+  border-radius: 50%;
+}
+
+#testimonials input[type="radio"] {
+  display: none;
+}
+
+#testimonials label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#controls {
+  margin: -115px 0 0 0;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+  position: relative;
+}
+
+#controls label {
+  transition: opacity 0.2s ease-out;
+  display: none;
+  width: 50px;
+  height: 50px;
+  opacity: 0.4;
+}
+
+#controls label:hover {
+  opacity: 1;
+}
+
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(1) {
+  background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+  float: right;
+  margin: 0 30px 0 0;
+  display: block;
+}
+
+#slide1:checked ~ #controls label:nth-child(3),
+#slide2:checked ~ #controls label:nth-child(1),
+#slide3:checked ~ #controls label:nth-child(2) {
+  background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+  float: left;
+  margin: 0 0 0 30px;
+  display: block;
+}
+
+#bullets {
+  margin: 150px 0 0;
+  text-align: center;
+}
+
+#bullets label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #ccc;
+  margin: 0 10px;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3) {
+  background: #a01516;
+}
+
+#procedure {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+}
+
+#kid-img {
+  width: 273px;
+  height: 230px;
+  border-radius: 8px;
+  background: url(static/img/kid.jpg) center center no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.procedure-desc {
+  width: 60%;
+}
+
+.procedure-desc h2 {
+  margin: 15px 0;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer .credit {
+  width: 25%;
+}
+
+#footer .copyright {
+  width: 35%;
+}
+
+#who-we {
+  display: flex;
+  width: 90%;
+  margin: 40px auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#color-child {
+  width: 273px;
+  height: 230px;
+  border-radius: 8px;
+  background: url(static/img/child.jpg) center center no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.box {
+  width: 190px;
+  height: 95px;
+  border-radius: 8px;
+  color: #a01516;
+  background-color: #f58f8f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box span {
+  font-size: 2.4rem;
+}
+
+.box p {
+  font-size: 1.4rem;
+}
+
+#team {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  margin: 40px auto;
+  padding: 30px 8%;
+  background-color: #f58f8f;
+}
+
+#team-photo {
+  width: 273px;
+  height: 230px;
+  border-radius: 8px;
+  background: url(static/img/teamPhoto.jpg) center center no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#mission-history {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 15px;
+}
+
+#mission-history hr {
+  margin: 33px;
+  border: 2px solid #a01516;
+}
+
+#mission-history ul {
+  list-style-type: none;
+}
+
+#mission-history li {
+  margin: 10px 25px;
+  position: relative;
+}
+
+#mission-history li::before {
+  position: absolute;
+  left: -25px;
+  content: "arrow_right";
+  font-family: "Material Icons";
+  font-size: 25px;
+  vertical-align: -23%;
+}
+
+#contact-form {
+  width: 80%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input,
+textarea {
+  width: 70vw;
+  margin: 10px auto;
+  padding: 5px 9px;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #a01516;
+  border-radius: 8px;
+}
+
+#social-contact {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f58f8f;
+  padding: 20px 10px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left {
+  width: 30%;
+}
+.right {
+  width: 30%;
+}
+
+#social-contact .logo {
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 55%;
+}
+
+.s-item {
+  width: 34px;
+  height: 30px;
+  display: flex;
+  background-color: #a01516;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.s-item a {
+  color: white;
+}
+
+#social-contact h2 {
+  color: #a01516;
+}
+
+#social-contact hr {
+  width: 30%;
+  border: 1px solid #a01516;
+}
+
+@media (max-width: 1200px) {
+  .social-icons {
+    width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  #procedure {
+    flex-direction: column;
+  }
+  #kid-img {
+    width: 75%;
+    height: 300px;
+  }
+  .procedure-desc h2 {
+    text-align: center;
+  }
+  #who-we {
+    flex-direction: column;
+  }
+  .who-we-desc {
+    margin-top: 20px;
+  }
+  .who-we-desc h2 {
+    text-align: center;
+  }
+  .who-we-desc p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #social-contact {
+    flex-direction: column;
+  }
+  .left {
+    width: 50%;
+    margin: 10px auto;
+  }
+  .left .logo {
+    margin-left: 0;
+  }
+  .right {
+    width: 50%;
+    margin: 10px auto;
+  }
+  .item,
+  .reverse-flex {
+    flex-direction: column;
+  }
+  .img-desc p {
+    text-align: center;
+  }
+  #footer {
+    flex-direction: column;
+  }
+  #footer .logo {
+    display: none;
+  }
+  .footer-content {
+    width: 90%;
+  }
+  .btn {
+    margin: 20px auto;
+  }
+  .box {
+    width: 205px;
+  }
+  #mission-history {
+    flex-direction: column;
+  }
+  #mission-history hr {
+    margin: 33px auto;
+    width: 100vw;
+  }
+  #contact-form {
+    width: 95%;
+  }
+  input,
+  textarea {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .humburger {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+  .line {
+    width: 40px;
+    height: 3px;
+    border: 2px solid #323c54;
+    margin: 7px 0px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    visibility: hidden;
+    height: 180px;
+  }
+
+  .nav-open {
+    height: 260px;
+    justify-content: space-between;
+  }
+  .nav-open ul {
+    margin-top: 30px;
+  }
+  #details .img-desc {
+    width: 95%;
+  }
+  .procedure-desc {
+    width: 95%;
+  }
+  .footer-content {
+    width: 95%;
+  }
+  .footer-content p {
+    font-size: 12px;
+  }
+  #team {
+    flex-direction: column;
+    margin: 15px auto;
+    padding: 15px auto;
+  }
+  .team-details {
+    text-align: center;
+  }
+  .left,
+  .right {
+    width: 95%;
+  }
+  .boxes {
+    flex-direction: column;
+  }
+  .box {
+    margin: 10px auto;
+  }
+}

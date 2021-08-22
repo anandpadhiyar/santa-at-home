@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Santa at Home</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous"/>
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        style 
+            include ../static/css/style.css
+    body
+        .wrapper 
+            nav#navbar
+                .logo 
+                    img(src="../static/img/baloonLogo.png", alt="")
+                ul
+                    li
+                        a(href="/").active#home Home
+                    li 
+                        a(href="/about")#about About us
+                    li
+                        a(href="/contact")#contact Contact us
+            .humburger#burger 
+                .line 
+                .line 
+                .line 
+            section#intro 
+                .heading 
+                    h1.main-text Welcome to Santa at house 
+                    .subtitle put smile on your child face on their birthday.
+                    button.btn#book-now
+                        | Book Now
+                        span.material-icons arrow_forward_ios
+            block content
+            footer#footer
+                .logo 
+                    img(src="../static/img/baloonLogo.png", alt="")
+                .footer-content 
+                    p.credit Designed & Developed by Master in Spreadsheet 
+                    p.copyright &copy; All rights reserved
+    script(src="../static/js/script.js") 
+    block script 
+
+

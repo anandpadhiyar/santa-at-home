@@ -1,0 +1,40 @@
+extends base.pug
+
+block content 
+    #contact-form
+        h2 Fill this form to invite us! 
+        form(action="/contact", method="post")
+            input(type="text", placeholder="Your name", name="name")#name 
+            textarea(name="address", cols="30", rows="6", placeholder="Address")#address
+            input(type="phone" placeholder="Your contact", name="contact")#contact
+            input(type="email" placeholder="Your Email", name="email")#email
+            textarea(name="desc", cols="30", rows="6", placeholder="Why you want to invite us")#desc
+            button(type="submit")#submit.btn Submit 
+
+    #social-contact 
+        .left
+            .logo 
+                img(src="../static/img/baloonLogo.png", alt="") 
+            .social-icons 
+                .s-item
+                    a(href="") #[i.fa.fa-facebook(aria-hidden="true")] 
+                .s-item
+                    a(href="") #[i.fa.fa-twitter(aria-hidden="true")] 
+                .s-item
+                    a(href="") #[i.fa.fa-instagram(aria-hidden="true")] 
+                .s-item
+                    a(href="") #[i.fa.fa-linkedin(aria-hidden="true")] 
+                .s-item
+                    a(href="") #[i.fa.fa-youtube-play(aria-hidden="true")] 
+        .right 
+            h2 Reach us
+            hr
+            p masterspredsheet@gmail.com
+
+block script 
+    script.
+        const navItems = document.querySelectorAll('#navbar ul li a');
+        for (navItem of navItems) {
+            navItem.classList.remove('active');
+        }
+        document.getElementById('contact').classList.add('active');

@@ -1,0 +1,47 @@
+extends base.pug
+block content 
+    section#who-we 
+        .img-container#color-child 
+        .who-we-desc 
+            h2 Who we are?
+            p We are just ordinary people who wants to spread happiness.
+            .boxes 
+                .box 
+                    <span class="material-icons">hourglass_bottom</span>
+                    p 5+ Years
+                .box 
+                    <span class="material-icons">sentiment_very_satisfied</span>
+                    p 60+ Events
+    
+    section#team 
+        .img-container#team-photo 
+        .team-details 
+            h2 Meet our team 
+            p Ms. Rewi - Event organizer and Team lead 
+            p Ms. Carol - Camera operator and Video editor 
+            p Mr. Jack - Santa clause 
+            p Mr. Ray - Customer Relation Manager
+            p Ms. Rita - Digital Marketing incharge
+    
+    section#mission-history 
+        .history 
+            h2 Our History 
+            ul.history-points 
+                li We have started this 5 years ago to spread happiness among children.
+                li Using our crativity, we have started designing events initially.
+                li We have got good response and then we have converted it in full time with fully team.
+        hr
+        .mission 
+            h2 Our Mission 
+            ul.mission-points 
+                li In this digital era, we are forgetting to create child memories.
+                li If we can create something which can increase child's creativity, it is benifical for his/her growth.
+                li Apart from that, strong memories are helpful in creating bonding between child and parents.
+                li We want to put smile on child and parents face with our little efforts.
+block script 
+    script.
+        const navItems = document.querySelectorAll('#navbar ul li a');
+        for (navItem of navItems) {
+            navItem.classList.remove('active');
+        }
+        document.getElementById('about').classList.add('active');

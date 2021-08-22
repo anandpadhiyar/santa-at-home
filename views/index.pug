@@ -1,0 +1,83 @@
+extends base.pug
+block content 
+    section#details 
+            .item
+                .img-container#santa-img 
+                .img-desc
+                    p Kids love santa and what if santa come on their birthday?
+                    p Yeah, you heard it correctly. Santa definaltely will come on their birthday. We will be santa for your kids. 
+            hr.divider
+            .reverse-flex.item
+                .img-container#santa-kid 
+                .img-desc
+                    p Wait, I have not completed yet. On your child's special day not only santa will come but he will come but he will wake up your child and will help your child for cake cutting and will give him surprise gift. 
+            hr.divider
+            .item
+                .img-container#camera 
+                .img-desc 
+                    p Hey, don't worry. We know that you want to always memorize this moment for your child.
+                    p We will shoot whole moment and put that on digital platform. Yout can always rewind these best moment.
+    section#testimonials 
+        input(type="radio", name="slide", checked)#slide1
+        input(type="radio", name="slide")#slide2
+        input(type="radio", name="slide")#slide3
+        .slider 
+            .slide.slide_1 
+                .img-slide 
+                    img(src="../static/img/customer1.jpg", alt="")
+                .content-slide 
+                    .content-slide-symbol &#8220;
+                    .content-slide-text 
+                        p I have organized my son's party and It was really wonderful. All staffs are taking event as their event and working accordingly.
+                        p Must try.
+                    hr
+                    .author 
+                        p Killy Sharol
+            .slide.slide_2
+                .img-slide 
+                    img(src="../static/img/customer2.jpg", alt="")
+                .content-slide 
+                    .content-slide-symbol &#8220;
+                    .content-slide-text 
+                        p I have organized my son's party and It was really wonderful. All staffs are taking event as their event and working accordingly.
+                        p Must try.
+                    hr
+                    .author 
+                        p Will Hallington
+            .slide.slide_3
+                .img-slide 
+                    img(src="../static/img/customer3.jpg", alt="")
+                .content-slide 
+                    .content-slide-symbol &#8220;
+                    .content-slide-text 
+                        p I have organized my son's party and It was really wonderful. All staffs are taking event as their event and working accordingly.
+                        p Must try.
+                    hr
+                    .author 
+                        p Ross Taylor
+        #controls   
+            label(for="slide1")
+            label(for="slide2")  
+            label(for="slide3")
+        #bullets 
+            label(for="slide1")   
+            label(for="slide2")   
+            label(for="slide3")   
+    section#procedure 
+        .img-container#kid-img 
+        .procedure-desc
+            h2 How to get our Service? 
+            ol 
+                li First fill #[a(href="/contact") this] form.
+                li We will contact you on your given no and will seek information about your child likings.
+                li According to information provided by you, we will make the plan and will arrange event.
+                li We are fully equipped with costumes, gifts and cake so we don't need these items.
+                li Please note that, we are not charging any money for the event though we accept charrity which is very critical to run initiative.
+                p If you want to contribute, you can click #[a(href="/") here].
+block script 
+    script.
+        const navItems = document.querySelectorAll('#navbar ul li a');
+        for (navItem of navItems) {
+            navItem.classList.remove('active');
+        }
+        document.getElementById('home').classList.add('active');
